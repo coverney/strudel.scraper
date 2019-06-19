@@ -32,7 +32,13 @@ gh_api = scraper.GitHubAPI()
 issues = pd.DataFrame(gh_api.repo_issues('cmustrudel/strudel.scraper'))
 ```
 
-
+The `gh_api` object can also be used to get user profile information. The following code snippet prints the number of followers a user has by calling `user_info` (input = username). `user_info` returns a dictionary with keys including login, type, name, company, blog, location, email, bio, public_repos, followers, following, created_at, and updated_at. 
+```
+user_info = gh_api.user_info('user2589')
+followers = user_info['followers']
+print(followers, ';(') 
+# output is 5 ;(
+```
 
 ### Settings
 
